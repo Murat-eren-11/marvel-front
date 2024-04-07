@@ -16,27 +16,6 @@ const Comics = ({ token }) => {
   const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
-    const fetchFavorites = async () => {
-      if (!token) return; // S'assurer qu'un token est disponible
-      try {
-        const { data } = await axios.get(
-          `${import.meta.env.VITE_API_URL}/favorite`,
-          {
-            headers: { Authorization: `Bearer ${token}` },
-            withCredentials: true,
-          }
-        );
-        const comicIds = data.map((fav) => fav.comicId); // Ajustez selon la structure de votre réponse
-        setFavorites(comicIds);
-      } catch (error) {
-        console.error("Erreur lors de la récupération des favoris:", error);
-      }
-    };
-
-    fetchFavorites();
-  }, [token]);
-
-  useEffect(() => {
     const fetchData = async () => {
       try {
         const { data } = await axios.get(

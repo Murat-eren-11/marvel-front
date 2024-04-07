@@ -12,31 +12,9 @@ const Characters = ({ token }) => {
   const [limit, setLimit] = useState(20);
   const [skip, setSkip] = useState(0);
   const [total, setTotal] = useState(0);
-  const [searchTerm, setSearchTerm] = useState(""); // État pour stocker l'ID de recherche
+  const [searchTerm, setSearchTerm] = useState("");
   const [favorites, setFavorites] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-
-  useEffect(() => {
-    const fetchFavorites = async () => {
-      try {
-        const response = await axios.get(
-          `${import.meta.env.VITE_API_URL}/favorite`,
-          {
-            headers: {
-              Authorization: token,
-            },
-            withCredentials: true,
-          }
-        );
-        // Supposons que l'API renvoie une liste d'objets favoris avec une propriété characterId
-        setFavorites(response.data.map((fav) => fav.characterId));
-      } catch (error) {
-        console.error("Erreur lors de la récupération des favoris:", error);
-      }
-    };
-
-    fetchFavorites();
-  }, [token]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -66,7 +44,6 @@ const Characters = ({ token }) => {
   }, [limit, skip, searchTerm]);
 
   useEffect(() => {
-    // Met à jour les personnages avec le statut de favori une fois que les favoris sont chargés
     setHeroes((currentHeroes) =>
       currentHeroes.map((hero) => ({
         ...hero,
@@ -80,7 +57,6 @@ const Characters = ({ token }) => {
     setCurrentPage(pageNumber);
   };
 
-  // Calcul dynamique du début et de la fin de la plage des numéros de page visibles
   const visiblePages = 10;
   let startPage = Math.max(1, currentPage - Math.floor(visiblePages / 2));
   let endPage = Math.min(startPage + visiblePages - 1, totalPages);
@@ -95,27 +71,22 @@ const Characters = ({ token }) => {
 
   const handleFavorite = async (heroId) => {
     try {
-      // Récupérer l'identifiant de l'utilisateur à partir du cookie
-
-      // Vérifier si le cookie contenant le token existe
       if (token) {
         console.log("Token exists, sending POST request...");
 
-        // Envoyer la requête POST au back-end avec l'identifiant de l'utilisateur et du personnage
         await axios.post(
           `${import.meta.env.VITE_API_URL}/favorite`,
           {
-            userId: token, // Envoyer le token comme identifiant de l'utilisateur
-            characterId: heroId, // Envoyer l'identifiant du personnage
+            userId: token,
+            characterId: heroId,
           },
           {
-            withCredentials: true, // Inclure les cookies dans la requête
+            withCredentials: true,
           }
         );
 
         console.log("POST request successful");
         setFavorites((currentFavorites) => [...currentFavorites, heroId]);
-        // Mettre à jour l'état des héros pour marquer celui-ci comme favori
         setHeroes((prevHeroes) => {
           return prevHeroes.map((hero) => {
             if (hero._id === heroId) {
