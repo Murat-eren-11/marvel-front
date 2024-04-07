@@ -8,7 +8,6 @@ const Error = ({ token }) => {
   useEffect(() => {
     const fetchProf = async () => {
       try {
-        console.log(token);
         const responseProf = await axios.get(
           `${import.meta.env.VITE_API_URL}/user`,
           {

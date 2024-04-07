@@ -51,7 +51,7 @@ function App() {
         <Route path="/character/:id" element={<Character />} />
         <Route path="/comic/:comicId" element={<Comic />} />
         <Route path="/favorites" element={<Favorites token={token} />} />
-        <Route path="*" element={<Error />} />
+        <Route path="*" element={<Error token={token} />} />
       </Routes>
       {visible && <Signup setVisible={setVisible} handleToken={handleToken} />}
       {logVisible && (
