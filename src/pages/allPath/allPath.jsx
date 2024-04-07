@@ -12,7 +12,7 @@ const Error = ({ token }) => {
           `${import.meta.env.VITE_API_URL}/user`,
           {
             headers: {
-              Authorization: `Bearer ${token}`, // Assurez-vous que le token est inclus ici
+              Authorization: `Bearer ${token}`,
             },
           },
           {
@@ -48,7 +48,7 @@ const Error = ({ token }) => {
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1" // Utilisation de "embed" dans l'URL et ajout de autoplay=1&mute=1
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=0"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
