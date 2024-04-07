@@ -18,9 +18,7 @@ const Signup = ({ visible, setVisible, handleToken }) => {
           password: password,
         }
       );
-      //on appelle le token
       handleToken(response.data.token);
-      //on ferme la modale
       setVisible(false);
     } catch (error) {
       console.log("Erreur lors de l'inscription :", error);

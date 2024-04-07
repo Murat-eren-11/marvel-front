@@ -51,10 +51,13 @@ const Characters = ({ token }) => {
       }))
     );
   }, [favorites]);
+
   const totalPages = Math.ceil(total / limit);
 
-  const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber);
+  const handlePageChange = (newValue) => {
+    setCurrentPage(newValue);
+    setCurrentPage(1);
+    setSkip(0);
   };
 
   const visiblePages = 10;
