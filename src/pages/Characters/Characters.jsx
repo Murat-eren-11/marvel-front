@@ -76,11 +76,11 @@ const Characters = ({ token }) => {
 
         await axios.post(
           `${import.meta.env.VITE_API_URL}/favorite`,
+          { characterId: heroId },
           {
-            userId: token,
-            characterId: heroId,
-          },
-          {
+            headers: {
+              Authorization: `Bearer ${token}`, // Assurez-vous que le token est inclus ici
+            },
             withCredentials: true,
           }
         );

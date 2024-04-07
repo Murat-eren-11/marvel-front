@@ -20,6 +20,7 @@
 
 .search-input {
   padding: 8px 16px;
+  width: 100%;
   cursor: pointer;
   background-color: darkgrey;
   color: white;
