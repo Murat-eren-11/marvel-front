@@ -17,7 +17,7 @@ const Favorites = ({ token }) => {
           `${import.meta.env.VITE_API_URL}/favorite`,
           {
             headers: {
-              Authorization: `Bearer ${token}`, // Assurez-vous que le token est inclus ici
+              Authorization: `Bearer ${token}`,
             },
           },
           {
@@ -27,9 +27,8 @@ const Favorites = ({ token }) => {
 
         const favoritesData = response.data;
 
-        // Utiliser des critères spécifiques pour filtrer les personnages et les comics
-        const characters = favoritesData.filter((fav) => fav.name); // Présence du champ 'name'
-        const comics = favoritesData.filter((fav) => fav.title); // Présence du champ 'title'
+        const characters = favoritesData.filter((fav) => fav.name);
+        const comics = favoritesData.filter((fav) => fav.title);
 
         setCharacterFavorites(characters);
         setComicFavorites(comics);

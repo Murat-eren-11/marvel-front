@@ -4,10 +4,10 @@ import axios from "axios";
 
 const Error = ({ token }) => {
   const [isFormateur, setIsFormateur] = useState(false);
+
   useEffect(() => {
     const fetchProf = async () => {
       try {
-        console.log("juste avant fetch");
         const responseProf = await axios.get(
           `${import.meta.env.VITE_API_URL}/user`,
           {
@@ -19,8 +19,7 @@ const Error = ({ token }) => {
             withCredentials: true,
           }
         );
-
-        console.log(responseProf.data.username);
+        console.log("on a get");
         const usernameNormalized = responseProf.data.username
           .toLowerCase()
           .replace(/\d+/g, "");
@@ -32,7 +31,7 @@ const Error = ({ token }) => {
           setIsFormateur(true);
         }
       } catch (error) {
-        console.log(error);
+        console.log(error.message);
       }
     };
     fetchProf();
