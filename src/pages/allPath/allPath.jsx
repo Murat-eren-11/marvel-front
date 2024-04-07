@@ -14,12 +14,8 @@ const Error = ({ token }) => {
             headers: {
               Authorization: `Bearer ${token}`,
             },
-          },
-          {
-            withCredentials: true,
           }
         );
-        console.log("on a get");
         const usernameNormalized = responseProf.data.username
           .toLowerCase()
           .replace(/\d+/g, "");

@@ -77,8 +77,6 @@ const Characters = ({ token }) => {
   const handleFavorite = async (heroId) => {
     try {
       if (token) {
-        console.log("Token exists, sending POST request...");
-
         await axios.post(
           `${import.meta.env.VITE_API_URL}/favorite`,
           { characterId: heroId },
@@ -90,7 +88,6 @@ const Characters = ({ token }) => {
           }
         );
 
-        console.log("POST request successful");
         setFavorites((currentFavorites) => [...currentFavorites, heroId]);
         setHeroes((prevHeroes) => {
           return prevHeroes.map((hero) => {
