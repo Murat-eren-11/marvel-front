@@ -24,6 +24,7 @@
   cursor: pointer;
   background-color: darkgrey;
   color: white;
+  cursor: text;
 }
 
 @media screen and (min-width: 901px) and (max-width: 1000px) {
