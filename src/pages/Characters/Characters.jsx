@@ -54,10 +54,10 @@ const Characters = ({ token }) => {
 
   const totalPages = Math.ceil(total / limit);
 
-  const handlePageChange = (newValue) => {
-    setCurrentPage(newValue);
-    setCurrentPage(1);
-    setSkip(0);
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    const newSkip = (pageNumber - 1) * limit;
+    setSkip(newSkip);
   };
 
   const visiblePages = 10;
@@ -70,6 +70,8 @@ const Characters = ({ token }) => {
 
   const handleSearch = (newValue) => {
     setSearchTerm(newValue);
+    setCurrentPage(1);
+    setSkip(0);
   };
 
   const handleFavorite = async (heroId) => {
