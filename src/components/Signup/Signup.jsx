@@ -11,7 +11,7 @@ const Signup = ({ visible, setVisible, handleToken }) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${import.meta.env.local.VITE_API_URL}/signup`,
+        `${import.meta.env.VITE_API_URL}/signup`,
         {
           username: username,
           email: email,

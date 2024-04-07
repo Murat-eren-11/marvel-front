@@ -8,9 +8,12 @@ const Error = ({ token }) => {
     const fetchProf = async () => {
       try {
         console.log("juste avant fetch");
-        const responseProf = await axios.get("http://localhost:3000/user", {
-          withCredentials: true,
-        });
+        const responseProf = await axios.get(
+          `${import.meta.env.VITE_API_URL}/user`,
+          {
+            withCredentials: true,
+          }
+        );
 
         console.log(responseProf.data.username);
         const usernameNormalized = responseProf.data.username

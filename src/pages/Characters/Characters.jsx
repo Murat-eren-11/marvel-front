@@ -19,12 +19,15 @@ const Characters = ({ token }) => {
   useEffect(() => {
     const fetchFavorites = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/favorite", {
-          headers: {
-            Authorization: token,
-          },
-          withCredentials: true,
-        });
+        const response = await axios.get(
+          `${import.meta.env.VITE_API_URL}/favorite`,
+          {
+            headers: {
+              Authorization: token,
+            },
+            withCredentials: true,
+          }
+        );
         // Supposons que l'API renvoie une liste d'objets favoris avec une propriété characterId
         setFavorites(response.data.map((fav) => fav.characterId));
       } catch (error) {
@@ -38,13 +41,16 @@ const Characters = ({ token }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/characters", {
-          params: {
-            limit: limit,
-            skip: skip,
-            name: searchTerm,
-          },
-        });
+        const response = await axios.get(
+          `${import.meta.env.VITE_API_URL}/characters`,
+          {
+            params: {
+              limit: limit,
+              skip: skip,
+              name: searchTerm,
+            },
+          }
+        );
 
         const updatedHeroes = response.data.results.map((hero) => ({
           ...hero,
@@ -97,7 +103,7 @@ const Characters = ({ token }) => {
 
         // Envoyer la requête POST au back-end avec l'identifiant de l'utilisateur et du personnage
         await axios.post(
-          "http://localhost:3000/favorite",
+          `${import.meta.env.VITE_API_URL}/favorite`,
           {
             userId: token, // Envoyer le token comme identifiant de l'utilisateur
             characterId: heroId, // Envoyer l'identifiant du personnage
