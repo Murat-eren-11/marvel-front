@@ -6,3 +6,6 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: #1a1c1d;
 }
+input {
+  color: white;
+}
