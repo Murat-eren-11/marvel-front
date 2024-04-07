@@ -16,6 +16,11 @@ const Favorites = ({ token }) => {
         const response = await axios.get(
           `${import.meta.env.VITE_API_URL}/favorite`,
           {
+            headers: {
+              Authorization: `Bearer ${token}`, // Assurez-vous que le token est inclus ici
+            },
+          },
+          {
             withCredentials: true,
           }
         );
