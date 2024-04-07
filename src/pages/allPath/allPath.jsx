@@ -11,6 +11,11 @@ const Error = ({ token }) => {
         const responseProf = await axios.get(
           `${import.meta.env.VITE_API_URL}/user`,
           {
+            headers: {
+              Authorization: `Bearer ${token}`, // Assurez-vous que le token est inclus ici
+            },
+          },
+          {
             withCredentials: true,
           }
         );
@@ -19,8 +24,8 @@ const Error = ({ token }) => {
         const usernameNormalized = responseProf.data.username
           .toLowerCase()
           .replace(/\d+/g, "");
-        const formateurs = ["tom", "alexis", "lucas", "murat"].map((name) =>
-          name.toLowerCase()
+        const formateurs = ["tom", "alexis", "lucas", "murat", "antoine"].map(
+          (name) => name.toLowerCase()
         );
 
         if (formateurs.includes(usernameNormalized)) {
