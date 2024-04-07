@@ -12,7 +12,6 @@ body {
 
 /* ==== GRID ==== */
 .grid {
-  background-color: #5d6771;
   position: relative;
   display: grid;
   grid-template-columns: 1.167fr 0.45fr 0.225fr 0.3fr 0.8fr;

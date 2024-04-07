@@ -24,7 +24,7 @@ const Login = ({ setLogVisible, handleToken }) => {
       setLogVisible(false);
       //on va dans /publish
     } catch (error) {
-      if (error.response && error.response.status === 400) {
+      if (error.response && error.response.status === 401) {
         setErrorMessage("Email ou mot de passe incorrect.");
         setShowErrorBorder(true);
       } else {
