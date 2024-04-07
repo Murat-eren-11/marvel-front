@@ -1,0 +1,22 @@
+.comicmain {
+  display: flex;
+  justify-content: center;
+}
+.comicsection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.comicname,
+.comicdescription {
+  color: white;
+}
+.comicsection > img {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.comicname {
+  font-size: 42px;
+  margin-top: 50px;
+}

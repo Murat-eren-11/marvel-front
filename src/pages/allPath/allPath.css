@@ -1,0 +1,22 @@
+.img404 > img {
+  width: 50vh;
+  height: 50vh;
+}
+
+.img404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.troll {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.troll > h3 {
+  color: white;
+  font-size: 36px;
+}

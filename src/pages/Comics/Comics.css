@@ -1,0 +1,62 @@
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  background-color: #1a1c1d;
+}
+.comicsSection {
+  display: flex;
+
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.comiccard {
+  flex: 1 0 19%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  min-width: 240px;
+  border-radius: 10px;
+  height: fit-content;
+  max-width: 280px;
+  cursor: pointer;
+}
+
+.comiccard:hover {
+  background-color: #000;
+}
+
+.comiccard > h3 {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 10px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+.comiccard > img {
+  align-self: center;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: top;
+}
+.comiccard > img:hover {
+  scale: 1.15;
+  transition: ease-in-out 1s;
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5px;
+  padding: 20px 0;
+}

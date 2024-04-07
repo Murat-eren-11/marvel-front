@@ -1,0 +1,21 @@
+.inputco {
+  border-bottom: 1px solid grey !important;
+}
+
+.boutonerror {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.connecter {
+  background-color: #ee171f;
+  color: white;
+  width: 200px;
+  padding: 10px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 30px;
+}

@@ -1,0 +1,76 @@
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  background-color: #1a1c1d;
+}
+.characterSection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.herocard {
+  flex: 1 0 19%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  min-width: 240px;
+  border-radius: 10px;
+  height: fit-content;
+  max-width: 280px;
+  cursor: pointer;
+}
+
+.herocard:hover {
+  background-color: #000;
+}
+
+.herocard > h3 {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 10px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+.herocard > img {
+  align-self: center;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: top;
+}
+.herocard > img:hover {
+  scale: 1.15;
+  transition: ease-in-out 1s;
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5px;
+  padding: 20px 0;
+  margin-top: 100px;
+}
+.favorite-button {
+  cursor: pointer;
+  position: absolute;
+  padding: 8px;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  color: #ee171f;
+}
+.favorite-button:hover {
+  color: red;
+  scale: 1.2;
+  transition: ease 1s;
+}

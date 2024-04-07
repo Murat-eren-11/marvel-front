@@ -1,0 +1,120 @@
+header {
+  height: 300px;
+  border-bottom: 5px solid #ee171f;
+}
+
+.logocontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.logo {
+  width: 200px;
+}
+.butonnav {
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.headbtn {
+  font-size: 18px;
+  font-weight: 600;
+  width: 120px;
+  height: 70px;
+  border-radius: 15px;
+  background-color: #ee171f;
+  color: white;
+  cursor: pointer;
+}
+.headbtn:not(:first-child) {
+  margin-left: 50px;
+}
+.headbtn:hover {
+  opacity: 0.9;
+}
+.loginsignup {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: absolute;
+  top: 3%;
+  right: 1%;
+
+  border: 1px solid #ee171f;
+  height: 30px;
+  border-radius: 10px;
+  align-items: center;
+  background-color: #ee171f;
+}
+.signup,
+.login {
+  border: none;
+  margin: 0 5px;
+  color: white;
+  background-color: inherit;
+  cursor: pointer;
+}
+.divise {
+  color: white;
+}
+
+.sedeco {
+  color: white;
+  border: none;
+  background-color: inherit;
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 150px;
+  }
+
+  .logocontainer {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .logo {
+    width: 100px; /* Adjust the logo size for smaller screens */
+  }
+
+  .butonnav {
+    gap: 20px; /* Reduce the gap between buttons for smaller screens */
+  }
+
+  .headbtn {
+    font-size: 14px; /* Reduce the font size for smaller screens */
+    width: 100px; /* Adjust button width for smaller screens */
+    height: 50px; /* Adjust button height for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .loginsignup {
+    flex-direction: row; /* Change la disposition en colonne sur petits écrans */
+    gap: 10px; /* Réduit l'espacement entre les éléments */
+    right: 1%;
+    top: 2%;
+    background-color: inherit;
+  }
+
+  .headbtn,
+  .sedeco,
+  .signup,
+  .login {
+    width: auto; /* Ajuste la largeur des boutons au contenu */
+    padding: 5px 10px; /* Réduit le padding pour économiser de l'espace */
+    font-size: 14px; /* Réduit la taille de la police pour une meilleure lecture */
+  }
+  .signup,
+  .sedeco,
+  .login {
+    font-size: 10px;
+    padding: 0;
+  }
+}

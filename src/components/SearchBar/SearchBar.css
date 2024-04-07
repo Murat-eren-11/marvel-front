@@ -1,0 +1,47 @@
+.search-container {
+  position: absolute;
+  top: 43vh;
+  left: 10vh;
+  right: 0;
+  z-index: 1; /* Assurez-vous que le z-index est supérieur aux autres éléments */
+  border: 1px solid rgba(0, 0, 0, 0.7); /* Bordure des suggestions */
+  border-top: none; /* Supprimer la bordure supérieure pour une apparence plus propre */
+  border-radius: 4px; /* Coins arrondis */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.suggestions-list {
+  list-style: none; /* Supprimer les puces des listes */
+  padding: 0;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.suggestion {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.search-input {
+  padding: 8px 16px; /* Espacement interne des suggestions */
+  cursor: pointer; /* Curseur pointeur au survol */
+  background-color: darkgrey;
+  color: white;
+}
+
+@media screen and (min-width: 901px) and (max-width: 1000px) {
+  .search-container {
+    top: 20.5vh;
+  }
+  .suggestions-list {
+    max-width: 29vh;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .suggestion {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 900px) {
+  .search-container {
+    top: 25vh;
+  }
+}

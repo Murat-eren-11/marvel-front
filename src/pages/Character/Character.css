@@ -1,0 +1,36 @@
+.character {
+  display: flex;
+  justify-content: center;
+}
+.cardchar {
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.heroname {
+  color: white;
+  font-size: 42px;
+  margin: 20px 20px;
+  padding: 10px auto;
+}
+
+.comiclist {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.comich3 {
+  color: white;
+}
+.comich4 {
+  font-size: 12px;
+}
+.description {
+  color: white;
+  margin-top: 25px;
+}
